@@ -10,14 +10,14 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  -webkit-font-smotthing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 header {
   background: var(--dark);
@@ -25,9 +25,33 @@ header {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1152px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+  }
 }
 
 header nav .left a {
@@ -400,49 +424,49 @@ section.contact .input-wrap-2 textarea {
   border: 1px solid var(--light);
   font-size: 0.9rem;
 }
-section.contact .input-wrap-2 textarea:focus, section.contact input:focus {
+section.contact .input-wrap-2 textarea:focus,
+section.contact input:focus {
   outline: none;
 }
-section.contact .btn-wrapper{
+section.contact .btn-wrapper {
   text-align: center;
   margin-top: 2rem;
 }
 
-footer{
+footer {
   background: var(--dark);
   text-align: center;
   padding: 5rem 0;
 }
-footer .footer-logo{
+footer .footer-logo {
   margin-bottom: 3rem;
   width: 150px;
 }
-footer .footer-socials a{
+footer .footer-socials a {
   margin-right: 1rem;
- 
 }
 footer .footer-socials a:hover {
   background: var(--primary);
 }
 
-footer .footer-socials{
+footer .footer-socials {
   margin-bottom: 3rem;
   margin-right: -1rem;
 }
-footer .copyright{
+footer .copyright {
   color: var(--ternary);
 }
 
-@media(max-width: 1024px){
-  header #main-van{
+@media (max-width: 1024px) {
+  header #main-van {
     display: none;
   }
 }
 
-.site-main-wrapper{
+.site-main-wrapper {
   position: relative;
 }
-.hamberger{
+.hamberger {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -452,10 +476,10 @@ footer .copyright{
   outline: none;
   cursor: pointer;
 }
-.hamberger img{
+.hamberger img {
   width: 30px;
 }
-.mobile-nav{
+.mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -466,12 +490,24 @@ footer .copyright{
   padding: 2rem;
   padding-top: 5rem;
   transform: translateX(-100%);
-  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
-.open{
+.open {
   transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
 }
-.times{
+.times {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -480,15 +516,110 @@ footer .copyright{
   outline: none;
   cursor: pointer;
 }
-.times img{
+.times img {
   width: 30px;
 }
-.mobile-nav ul{
+.mobile-nav ul {
   list-style-type: none;
 }
 
-.mobile-nav ul li a{
+.mobile-nav ul li a {
   color: var(--secondary);
   text-decoration: none;
   font-size: 2rem;
+}
+
+@media (max-width:1024px){
+  header #main-nav{
+      display:none;
+  }
+  .hamberger{
+      display: block;
+  }
+  .hero .left img{
+      width:260px;
+  }
+  .hero .right h1{
+      font-size: 3rem;
+  }
+  .hero{
+      padding-top:10rem;
+  }
+  header{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
+  }
+  section.about .about-me-img{
+      height: 360px;
+  }
+  section.services .card-wrapper{
+      grid-template-columns: repeat(2, 1fr);
+  }
+  section.work .card-wrapper{
+      grid-template-columns: repeat(2,1fr);
+  }
+  section.blog .card-wrapper{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  section.blog{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 97%, 0 100%);
+  }
+}
+
+@media (max-width:576px){
+  .hero{
+      flex-direction: column;
+  }
+  header{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 95%, 0 100%);
+  }
+  .hero .right{
+      position: absolute;
+      top:260px;
+      padding:0 1rem;
+      background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+  }
+  .hero .left{
+      margin-top:-5rem;
+      margin-right: -9rem;
+      padding-bottom:4rem;
+  }
+  .about-inner-wrap{
+      flex-direction: column;
+  }
+  .about .right{
+      text-align: center;
+      margin-top:2rem;
+  }
+  .about .right .social{
+      justify-content: center;
+  }
+  section{
+      padding: 4rem 0;
+  }
+  section.services .card-wrapper{
+      grid-template-columns: repeat(1, 1fr);
+      margin-top:6rem;
+  }
+  section.freelancer h1{
+      line-height:1.2;
+  }
+  section.freelancer{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 90%, 0 100%);
+      padding-bottom: 8rem;
+  }
+  section.reviews .slider .slide{
+      padding:0;
+  }
+  .section-heading + p{
+      margin-bottom: 3rem;
+  }
+  section.work .card-wrapper{
+      grid-template-columns: repeat(1,1fr);
+  }
+  section.contact .card-wrapper{
+      grid-template-columns: repeat(1,1fr);
+  }
+  section.contact .input-wrap{
+      grid-template-columns: repeat(1, 1fr);
+  }
 }
